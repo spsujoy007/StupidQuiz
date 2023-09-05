@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
-import Welcome from "../Pages/Home/Welcome";
 import Profile from "../Pages/Profile";
 import Privacy from "../Pages/Privacy";
+import CelibrateWelcome from "../Pages/Home/CelibrateWelcome";
 
 export const routes = createBrowserRouter([
     {
@@ -16,7 +16,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/welcome',
-                element: <Welcome></Welcome>
+                element: <CelibrateWelcome></CelibrateWelcome>
             },
             {
                 path: '/profile',

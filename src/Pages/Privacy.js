@@ -2,7 +2,7 @@ import React from 'react';
 
 const Privacy = () => {
     return (
-        <div className='max-w-[1240px] mx-auto pt-20 lg:px-0 px-5'>
+        <div className='max-w-[1240px] mx-auto pt-20 '>
             <div className='border-b-2 pb-2 border-[#64CCC5]'>
                 <h1 className='text-4xl text-[#64CCC5]'>প্রাইভেসি পেইজ</h1>
             </div>
