@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
     const [time, setTime] = useState(3);
     const [shownumber, setShowNumber] = useState(0);
-    const [showButton, setShowButton] = useState(false);
     const navigate = useNavigate()
 
     const primary = '#64CCC5'
@@ -41,7 +40,6 @@ const Home = () => {
     setTimeout(() => {
         if(shownumber < 2){
             setShowNumber(shownumber+1);
-            setShowButton(true)
         }
         // if(shownumber >= 2){
         //     setShowNumber(0)
@@ -64,7 +62,7 @@ const Home = () => {
                     <div className='w-[70vw] mx-auto'>
                         <h2 className={`text-[80px] text-center pt-[25%] text-[#64CCC5] `}>{lines[shownumber]}</h2>
                         {
-                            showButton &&
+                            shownumber === 2 &&
                             <div className='flex justify-center py-5'>
                                 <button onClick={() => navigate('/profile')} className={`text-white bg-[#379691] hover:bg-[#2e7d79] duration-150 rounded-md px-14 py-3`}>প্রফাইল বানাই 👻</button>
                             </div>
