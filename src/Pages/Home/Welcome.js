@@ -50,6 +50,21 @@ const Welcome = () => {
         // }
     }, 3000)
 
+    const handleClickAddProfile = () => {
+        const profile = [
+            {
+                name: "",
+                bio: "",
+                photoURL: "",
+            }
+        ]
+
+        localStorage.setItem('profile-sq', JSON.stringify(profile))
+
+        navigate('/profile');
+
+    }
+
     return (
         <div>
             
@@ -69,7 +84,7 @@ const Welcome = () => {
                         {
                             shownumber === 2 &&
                             <div className='flex justify-center py-5'>
-                                <button onClick={() => navigate('/profile')} className={`text-white bg-[#379691] hover:bg-[#2e7d79] duration-150 rounded-md px-14 py-3`}>প্রফাইল বানাই 👻</button>
+                                <button onClick={handleClickAddProfile} className={`text-white bg-[#379691] hover:bg-[#2e7d79] duration-150 rounded-md px-14 py-3`}>প্রফাইল বানাই 👻</button>
                             </div>
                         }
                         </div>
