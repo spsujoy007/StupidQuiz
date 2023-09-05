@@ -18,18 +18,28 @@ const Profile = () => {
 
     const editProfile = (e) => {
         e.preventDefault();
-        setProfileMode('view')
+        // setProfileMode('view')
+        const form = e.target;
+        const name = form.name.value;
+        const bio = form.bio.value;
+
+        const profile = JSON.parse(localStorage.getItem('profile-sq'));
+        profile[0].name = name;
+        profile[0].bio = bio;
+        profile[0].photoURL = profileimg;
+        localStorage.setItem('profile-sq', JSON.stringify(profile))
+        
     }   
 
     return (
-        <div className='md:max-w-[1240px] mx-auto pt-20 lg:px-0 px-5'>
+        <div className='md:max-w-[1240px] mx-auto pt-20 lg:px-0 px-5 h-full'>
             {/* //view mode  */}
             <>
             {
                 profileMode === 'view' &&
                 <div className='flex items-start md:flex-row flex-col'>
                 <div className='md:w-[30%]'>
-                        <div onClick={() => setProfileMode("edit")} for="profile-pic" className={`w-[300px] h-[300px] ${!profileimg && 'border-2'} border-dashed   overflow-hidden rounded-full flex items-center justify-center border-[#64CCC5]`}>
+                        <div onClick={() => setProfileMode("edit")} htmlFor="profile-pic" className={`w-[300px] h-[300px] ${!profileimg && 'border-2'} border-dashed   overflow-hidden rounded-full flex items-center justify-center border-[#64CCC5]`}>
                             {
                                 !profileimg ?
                                 <PiSelectionPlusBold className='text-white text-[80px]'></PiSelectionPlusBold>
@@ -80,7 +90,7 @@ const Profile = () => {
                     <div className='mt-10 px-5'>
                         {/* for name  */}
                         <label htmlFor="name" className='text-sm text-white'>তোমার নাম লেখো বাবুয়া </label> <br />
-                        <input name='name' id='name' className='bg-transparent text-white mb-3 p-2 border-2 rounded-md w-full border-[#64CCC5]' type="text" placeholder='কমুনা আমার শরম করে' />
+                        <input required name='name' id='name' className='bg-transparent text-white mb-3 p-2 border-2 rounded-md w-full border-[#64CCC5]' type="text" placeholder='কমুনা আমার শরম করে' />
                         
                         {/* for bio  */}
                         <label htmlFor="bio" className='text-sm text-white'>নিজের সম্পর্কে কিছু লিখে যাও </label> <br />
