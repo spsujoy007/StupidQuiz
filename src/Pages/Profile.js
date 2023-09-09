@@ -5,8 +5,10 @@ import Dashboard from './Dashboard';
 import useTitle from '../Hooks/useTitle';
 import boy1 from '../Assets/Avatar/boy1.png'
 import boy2 from '../Assets/Avatar/boy2.png'
+import boy3 from '../Assets/Avatar/boy3.png'
 import girl1 from '../Assets/Avatar/girl1.png'
 import girl2 from '../Assets/Avatar/girl2.png'
+import girl3 from '../Assets/Avatar/girl3.png'
 
 const Profile = () => {
     useTitle('প্রফাইল')
@@ -26,8 +28,10 @@ const Profile = () => {
     const profilePicturs = [
         {name: 'boy1', img: boy1},
         {name: 'boy2', img: boy2},
+        {name: 'boy3', img: boy3},
         {name: 'girl1', img: girl1},
-        {name: 'girl2', img: girl2}
+        {name: 'girl2', img: girl2},
+        {name: 'girl3', img: girl3}
     ]
 
 
@@ -151,17 +155,18 @@ const Profile = () => {
                         </div>
 
                         {/* // profile images for user  */}
-                        <div className='grid md:grid-cols-5 pl-5 mt-5'>
+                        <div className='flex gap-x-3 justify-between w-[300px] mt-5 '>
                             {
                                 profilePicturs.map(pimg => 
-                                <div className='w-[50px]' onClick={() => setProfileimg(pimg?.img)}>
+                                    <div className='w-[50px]' onClick={() => setProfileimg(pimg?.img)}>
                                     <img className='rounded-full cursor-pointer hover:opacity-50' src={pimg?.img} alt={pimg?.name} />
                                 </div>)
                             }
                         </div>
+                        <p className='text-sm mt-2'>প্রফাইলের জন্য এভাটার পছন্দ করতে পারো</p>
                     </div>
 
-                    <div className='mt-10 px-5'>
+                    <div className='mt-10 '>
                         {/* for name  */}
                         <label htmlFor="name" className='text-sm text-white'>তোমার নাম লেখো বাবুয়া </label> <br />
                         <input required name='name' id='name' className='bg-transparent text-white mb-3 p-2 border-2 rounded-md w-full border-[#64CCC5]' type="text" placeholder='কমুনা আমার শরম করে' defaultValue={name} />
