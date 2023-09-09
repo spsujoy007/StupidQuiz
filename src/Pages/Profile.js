@@ -140,6 +140,12 @@ const Profile = () => {
                                 :
                                 <img className='w-full h-full' src={profileimg} alt="" />
                             }
+                            {
+                                profileimg ?
+                                <PiSelectionPlusBold className='text-white text-[80px]'></PiSelectionPlusBold>
+                                :
+                                <img className='w-full h-full' src={photoURL} alt="" />
+                            }
 
 
                         </div>

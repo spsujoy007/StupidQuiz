@@ -31,11 +31,11 @@ const Header = () => {
       </ul>
     </div>
     <Link to={'/'} className="normal-case ">
-        <img className='w-[130px] cursor-pointer ' src={logo} alt="" />
+        <img className='w-[140px] cursor-pointer ' src={logo} alt="" />
     </Link>
   </div>
   <div className="navbar-end hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 text-[15px]">
         {
             menuItem
         }
