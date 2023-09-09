@@ -56,6 +56,8 @@ const Welcome = () => {
                 name: "",
                 bio: "",
                 photoURL: "",
+                verify: false,
+                profile_mode: 'create'
             }
         ]
 
@@ -70,7 +72,7 @@ const Welcome = () => {
             
             {
                 status !== 'true' ?
-                <div className='flex items-center justify-center h-screen'>
+                <div className='flex items-center justify-center h-[85vh]'>
                     <div>
                         <h1 className={`text-[200px] text-center text-[#64CCC5]`}>{time}</h1>
                         <p className={`text-xl text-[${primary}]`}>অল্প কিছু সময় অপেক্ষা করি কেমন। 😉</p>

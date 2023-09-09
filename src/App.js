@@ -5,8 +5,10 @@ import { routes } from './Routes/Routes';
 function App() {
   return (
     // <div className="bg-[#deefff] h-screen mainwork">
-    <div className="bg-[#0f172a] h-screen mainwork">
-      <RouterProvider router={routes}></RouterProvider>
+    <div className=" min-h-[100vh] mainwork bg-[#0f172a]">
+      <div className=''>
+        <RouterProvider router={routes}></RouterProvider>
+      </div>
     </div>
   );
 }
