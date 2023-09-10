@@ -18,8 +18,8 @@ const AllQuzesList = () => {
         <div className='mt-5'>
             <div className={`grid grid-cols-2`}>
             {
-                quizes.map(q => <>
-                    <div className={`bg-[#d7edfd] px-5 pt-5 pb-10 m-3 rounded-lg quizPack `} >
+                quizes.map((q, idx) => <div key={idx}>
+                    <div  className={`bg-[#d7edfd] px-5 pt-5 pb-10 m-3 rounded-lg quizPack `} >
                         <h4 className='text-black text-[20px] font-bold'>{q.quiz_name}</h4>
                         <p className='text-[#0F172A] text-[16]'>এর ভেতরে মোট কুইজ সংখ্যাঃ <span className='text-[#64CCC5] font-bold'>{q.quizes.length} টি</span></p>
                         <p className='mt-3 text-blue-900'>কুইজ দিয়ে জিতে নেও রিওয়ার্ড। যা কোথাও কাজে লাগবেনা বুঝলা। 🤭</p>
@@ -28,7 +28,7 @@ const AllQuzesList = () => {
                             <button className='text-lg bg-green-500 hover:bg-green-600 duration-150 text-white px-5 py-1 rounded-md'>শুরু করে দেই</button>
                         </div>
                     </div>
-                </>)
+                </div>)
             }
             </div>
         </div>

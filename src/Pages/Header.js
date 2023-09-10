@@ -12,9 +12,10 @@ const Header = () => {
 
     const menuItem = <>
         <li><Link className='mr-2' to='/'>হোম</Link></li>
+        <li><Link className='mr-2' to='/blogs'>Blog</Link></li>
         {
-            checkStatus &&
-            <li><Link className='mr-2' to='/profile'>প্রফাইল</Link></li>
+          checkStatus &&
+          <li><Link className='mr-2' to='/profile'>প্রফাইল</Link></li>
         }
     </>
 
