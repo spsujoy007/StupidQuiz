@@ -1,0 +1,6 @@
+.quizPack{
+    transition: all 0.6s;
+}
+.quizPack:hover{
+    box-shadow: 0 0 80px #1691d376;
+}

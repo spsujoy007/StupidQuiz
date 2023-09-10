@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './AllQuizesList.css'
 
 const AllQuzesList = () => {
     const [quizes, setQuizes] = useState([]);
@@ -15,12 +16,17 @@ const AllQuzesList = () => {
 
     return (
         <div className='mt-5'>
-            <div className='md:grid grid-cols-3'>
+            <div className={`grid grid-cols-2`}>
             {
-                quizes.map(quiz => <>
-                    <div className='bg-[#0F2B40] p-5 m-3 rounded-lg border-[1px] border-[#64CCC5]' >
-                        <h4 className='text-white text-[23px]'>{quiz.quiz_name}</h4>
-                        <p className='text-[#64CCC5] text-lg'>এর ভেতরে মোট কুইজ সংখ্যা <span className='text-white font-bold'>{quiz.quizes.length} টি</span></p>
+                quizes.map(q => <>
+                    <div className={`bg-[#d7edfd] px-5 pt-5 pb-10 m-3 rounded-lg quizPack `} >
+                        <h4 className='text-black text-[20px] font-bold'>{q.quiz_name}</h4>
+                        <p className='text-[#0F172A] text-[16]'>এর ভেতরে মোট কুইজ সংখ্যাঃ <span className='text-[#64CCC5] font-bold'>{q.quizes.length} টি</span></p>
+                        <p className='mt-3 text-blue-900'>কুইজ দিয়ে জিতে নেও রিওয়ার্ড। যা কোথাও কাজে লাগবেনা বুঝলা। 🤭</p>
+
+                        <div className='mt-5 flex justify-end'>
+                            <button className='text-lg bg-green-500 hover:bg-green-600 duration-150 text-white px-5 py-1 rounded-md'>শুরু করে দেই</button>
+                        </div>
                     </div>
                 </>)
             }
