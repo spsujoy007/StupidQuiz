@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Blogs.css';
 
 const Blogs = () => {
 
@@ -112,24 +113,29 @@ const Blogs = () => {
 
 
     return (
-        <div className='md:max-w-[1240px] mx-auto mt-5'>
-            <div className='pl-5'>
+        <div className=' bg-white  blogsPaper'>
+            <div className=' md:max-w-[1240px] mx-auto mt-5'>
 
                 {/* first blog  */}
-                <div className='bg-[#f1f1f1] p-5'>
+                <div className=' p-5'>
                 <p className='text-xl font-bold mb-2 text-black'>Programming blogs:</p>
-                <div className='grid grid-cols-2 gap-y-10 gap-x-2 justify-center '>
+                <div className='grid grid-cols-4 gap-y-2 gap-x-2 justify-center '>
                 {
-                    blog.map(blog => 
-                    <div  className='border-2 p-2 rounded-md ' key={blog?.id}>
-                        <div className='flex gap-2'>
-                            <img className='w-[150px]' src={blog.media} alt="" />
+                    blog.map(({media, id, title, name,thumbnail,posted, sourceUrl}) => 
+                    <div  className='p-2 rounded-2xl bg-[#e0e0dd]' key={id}>
+                        <div className='flex items-start gap-3'>
+                            <img className='w-[40px] h-[40px] rounded-full' src={thumbnail} alt="" />
                             <div>
-                                <h4 className='whitespace-pre-wrap text-[20px] text-black'>{blog?.title}</h4>
-                                <h2 className='text-gray-500'>name: <span className='font-bold text-gray-700'>{blog.name}</span></h2>
-                                    
-                                <a href={blog.sourceUrl}><button className='bg-[#64CCC5] text-white px-5 py-1 rounded-sm'>Resource</button></a>
+                                <p className='text-black capitalize whitespace-break-spaces'>{title.slice(0,23)}</p>
+                                <p className='text-xs text-gray-500'>{posted.split(":")[0]}</p>
                             </div>
+                        </div>
+                        <div>
+                            <div className='flex justify-center py-3'>
+                                <img className='h-[200px] rounded-xl' src={media} alt="" />
+                            </div>
+                            <p className='text-gray-500'>Name: <span className='font-bold text-gray-700'>{name}</span></p>
+                            <a className='bg-black text-white w-full inline-block mt-2 text-center rounded-full py-1 hover:bg-gray-800' href={sourceUrl} target='_blank' rel='noreferrer'>View Blog</a>
                         </div>
                     </div>)
                 }
