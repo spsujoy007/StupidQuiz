@@ -12,7 +12,8 @@ const Header = () => {
 
     const menuItem = <>
         <li><Link className='mr-2' to='/'>হোম</Link></li>
-        <li><Link className='mr-2' to='/blogs'>Blog</Link></li>
+        <li><Link className='mr-2' to='/blogs'>ব্লগ</Link></li>
+        <li><Link className='mr-2' to='/chatgpt'>জিপিটি</Link></li>
         {
           checkStatus &&
           <li><Link className='mr-2' to='/profile'>প্রফাইল</Link></li>

@@ -5,6 +5,7 @@ import Profile from "../Pages/Profile";
 import Privacy from "../Pages/Privacy";
 import CelibrateWelcome from "../Pages/Home/CelibrateWelcome";
 import Blogs from "../Pages/Blogs";
+import Gpt3 from "../Pages/Home/Gpt3";
 
 export const routes = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: '/chatgpt',
+                element: <Gpt3></Gpt3>
             },
         ]
     }

@@ -3,14 +3,12 @@ import './AllQuizesList.css'
 
 const AllQuzesList = () => {
     const [quizes, setQuizes] = useState([]);
-    console.log('hello')
     
     useEffect(() => {
         fetch('https://mocki.io/v1/b2f65b9d-cdd0-4ff2-b661-1622a6be9dd5')
         .then(res => res.json())
         .then((data) => {
             setQuizes(data)
-            console.log(data)
         })
     }, [])
 
