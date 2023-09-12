@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Gpt3 = () => {
-    const [text, setText] = useState('')
-    const [pretext, setPreText] = useState('')
+    // const [text, setText] = useState('')
+    // const [pretext, setPreText] = useState('')
 
     const CallFetch = async() =>{
         const url = 'https://bing-image-search1.p.rapidapi.com/images/details?insightsToken=%3CREQUIRED%3E';

@@ -117,16 +117,7 @@ const Blogs = () => {
             {
                 loading ?
                 <div className='flex h-[90vh] w-full justify-center items-center text-black'>
-                    <div className="lds-roller">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
+                    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 </div>
                 :
                 <div className=' md:max-w-[1240px] mx-auto '>
@@ -150,7 +141,7 @@ const Blogs = () => {
                                 <img className='h-[200px] rounded-xl' src={media} alt="" />
                             </div>
                             <p className='text-gray-500'>Name: <span className='font-bold text-gray-700'>{name}</span></p>
-                            <a className='bg-black text-white w-full inline-block mt-2 text-center rounded-full py-1 hover:bg-gray-800' href={sourceUrl} target='_blank' rel='noreferrer'>View Blog</a>
+                            <a className='bg-[#0F172A] text-white w-full inline-block mt-2 text-center rounded-full py-1 hover:bg-gray-800' href={sourceUrl} target='_blank' rel='noreferrer'>View Blog</a>
                         </div>
                     </div>)
                 }

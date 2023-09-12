@@ -1,9 +1,11 @@
 import React from 'react';
 import Welcome from './Welcome';
 import AllQuzesList from './AllQuzesList';
+import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
-    
+    const myquizes = useLoaderData();
+    console.log(myquizes)
     const profile = JSON.parse(localStorage.getItem('profile-sq'));
 
     return (
@@ -13,7 +15,9 @@ const Home = () => {
                 <Welcome></Welcome>
                 :
                 <div>
-                    <AllQuzesList></AllQuzesList>
+                    <AllQuzesList 
+                        myquizes={myquizes}
+                    ></AllQuzesList>
                 </div>
             }
         </div>
